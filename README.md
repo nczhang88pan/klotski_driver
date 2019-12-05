@@ -25,17 +25,15 @@ make && sudo insmod isgx.ko
 ```
 
 #### 2. Create a container
-1. build the docker image, you can also download the image from the panzhanghust/klotski_ae:
-	```docker build -t klotski_ae -f DockerFile .```
-2. create a container named klotski_ae_evl
+1. create a container named klotski_ae_evl
 	```
 	sudo docker run --rm --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it --privileged -d -v /dev/isgx:/dev/isgx --ipc=host --name=klotski_ae_evl klotski_ae
 	```
-3. enter the container
+2. enter the container
 	```
     docker exec -it klotski_ae_evl /bin/zsh
     ```
-4. check the SGX driver state in this container
+3. check the SGX driver state in this container
 	```
     ls /dev/isgx >/dev/null 2>1  && echo "SGX Driver installed" || echo "SGX Driver NOT installed"
     ```
