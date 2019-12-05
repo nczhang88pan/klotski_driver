@@ -2,7 +2,7 @@
 ### A. Setup the enviroment
 #### 1. Install the Intel SGX driver
 ```
-git clone https://github.com/nczhang88pan/Klotski_ae.git
+git clone https://github.com/nczhang88pan/klotski_driver.git
 cd ./Klotski_ae
 ./install_sgx_driver.sh
 ```
