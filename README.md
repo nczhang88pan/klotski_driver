@@ -1,4 +1,4 @@
-# Emm, I have found a problem inside the docker image, It would take me some time to fix it. I will update it after I finish it.
+# I found the docker filesystem may have an effect on the results. So I have to move the program out and use the directory mapping instead. So the document is a little different from the submitted AE pages. Sorry for the inconvenience.
 # How to run the benchmarks in Klotksi
 ### A. Setup the enviroment
 #### 1. Install the Intel SGX driver
@@ -28,7 +28,7 @@ make && sudo insmod isgx.ko
 #### 2. Create a container
 1. create a container named klotski_ae_evl
 	```
-	sudo docker run --rm --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it --privileged -d -v /dev/isgx:/dev/isgx --ipc=host --name=klotski_ae_evl klotski_ae
+	sudo docker run --rm --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it --privileged -d -v /dev/isgx:/dev/isgx -v {Klotski_ae_dir}:/home/root/klotski/ --ipc=host --name=klotski_ae_evl klotski_ae
 	```
 2. enter the container
 	```
@@ -53,16 +53,37 @@ make && sudo insmod isgx.ko
 ## D.  Run benchmarks
 #### 1. Run the basline benchmarks
 ```
-cd /home/root/klotski/native_benchmarks/loader
+cd /home/root/klotski/ae_programs/native_benchmarks/loader
 ./cmd.py
 ```
-The cmd.py script will run the nbench, djpeg and cjpeg automatically and store the results to the `/home/root/klotski/loader/resultDir`
+The cmd.py script will run the nbench, djpeg and cjpeg automatically and store the results to the `/home/root/klotski/ae_programs/resultDir`
 
 If you want to test the mbedtls, folow the instructions cout at the end of the logs. Copy the commands and execute them.
 
 #### 2. Run the programs with different vCache size
+##### 2.1. nbench
 ```
-cd /home/root/klotski/loader
+cd /home/root/klotski/ae_programs/klotski_benchmarks/nbench/
 ./cmd.py
 ```
-The results of the nbench, djpeg and cjpeg would also be stored to the `/home/root/klotski/loader/resultDir`
+
+##### 2.2. cjpeg
+```
+cd /home/root/klotski/ae_programs/klotski_benchmarks/cjpeg/
+./cmd.py
+```
+
+##### 2.3. djpeg
+```
+cd /home/root/klotski/ae_programs/klotski_benchmarks/djpeg/
+./cmd.py
+```
+
+##### 2.4. mbedTLS
+MbedTLS can only be tested manually, plz follow the instructions in you terminal.
+```
+cd /home/root/klotski/ae_programs/klotski_benchmarks/mbedtls/
+./cmd.py
+```
+
+The results of the nbench, djpeg and cjpeg would be stored in the `/home/root/klotski/ae_programs/resultDir`
