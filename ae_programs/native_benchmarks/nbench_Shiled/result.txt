@@ -1,0 +1,86 @@
+echo "#define LONG64" >pointer.h
+/home/alax/workingSpace/llvmProgram/llvm/build/bin/clang-5.0  -DLINUX  -fPIC -fno-asynchronous-unwind-tables -fno-jump-tables -fomit-frame-pointer -Wall -pedantic -Wno-unused-function -std=gnu11 -O1 -I../../libsgx/include -I../../libsgx/musl-libc/include -fno-stack-protector -fvisibility=hidden \
+		-c emfloat.c
+SetupCPUEmFloatArrays===
+Int32ToInternalFPF===
+DivideInternalFPF===
+DoEmFloatIteration===
+AddSubInternalFPF===
+MultiplyInternalFPF===
+RoundInternalFPF===
+denormalize===
+IsMantissaZero===
+SetInternalFPFZero===
+StickyShiftRightMant===
+ShiftMantRight1===
+Sub16Bits===
+normalize===
+Add16Bits===
+SetInternalFPFNaN===
+choose_nan===
+ShiftMantLeft1===
+SetInternalFPFInfinity===
+SetupCPUEmFloatArrays ::::0
+CALL64m %RSP, 1, %noreg, 8, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %EDI<imp-use>, %RSP<imp-def>, %EAX<imp-def>; mem:LD8[FixedStack7]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:8> <MCOperand Reg:0>>IMa
+Int32ToInternalFPF ::::784
+DivideInternalFPF ::::960
+CALL64m %RSP, 1, %noreg, 40, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %RDI<imp-use>, %RSP<imp-def>; mem:LD8[FixedStack7]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:40> <MCOperand Reg:0>>IMa
+CALL64m %RSP, 1, %noreg, 48, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %RDI<imp-use>, %ESI<imp-use>, %RSP<imp-def>; mem:LD8[FixedStack10]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:48> <MCOperand Reg:0>>IMa
+CALL64m %RSP, 1, %noreg, 32, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %RDI<imp-use>, %RSI<imp-use>, %RSP<imp-def>; mem:LD8[FixedStack6]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:32> <MCOperand Reg:0>>IMa
+TailJMP :DoEmFloatIteration
+DoEmFloatIteration ::::2944
+AddSubInternalFPF ::::3584
+CALL64m %RSP, 1, %noreg, 80, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %RDI<imp-use>, %RSI<imp-use>, %RSP<imp-def>; mem:LD8[FixedStack12]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:80> <MCOperand Reg:0>>IMa
+CALL64m %RSP, 1, %noreg, 104, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %RDI<imp-use>, %RSP<imp-def>, %EAX<imp-def>; mem:LD8[FixedStack9]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:104> <MCOperand Reg:0>>IMa
+---------------------- page index: 0
+SetupCPUEmFloatArrays
+Int32ToInternalFPF
+DivideInternalFPF
+DoEmFloatIteration
+----------------------page end;
+MultiplyInternalFPF ::::5136
+CALL64m %RSP, 1, %noreg, 40, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %RDI<imp-use>, %ESI<imp-use>, %RSP<imp-def>; mem:LD8[FixedStack8]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:40> <MCOperand Reg:0>>IMa
+CALL64m %RSP, 1, %noreg, 80, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %RDI<imp-use>, %RSI<imp-use>, %EDX<imp-use>, %ECX<imp-use>, %RSP<imp-def>; mem:LD8[FixedStack5]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:80> <MCOperand Reg:0>>IMa
+CALL64m %RSP, 1, %noreg, 72, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %RDI<imp-use>, %RSI<imp-use>, %RSP<imp-def>; mem:LD8[FixedStack6]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:72> <MCOperand Reg:0>>IMa
+I am here, not find start
+CALL64m %RSP, 1, %noreg, 32, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %RDI<imp-use>, %RSP<imp-def>, %EAX<imp-def>; mem:LD8[FixedStack4]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:32> <MCOperand Reg:0>>IMa
+RoundInternalFPF ::::7056
+TailJMP :denormalize
+denormalize ::::7296
+---------------------- page index: 1
+AddSubInternalFPF
+MultiplyInternalFPF
+RoundInternalFPF
+----------------------page end;
+IsMantissaZero ::::7760
+SetInternalFPFZero ::::7856
+StickyShiftRightMant ::::7952
+CALL64m %RSP, 1, %noreg, 24, %noreg, <regmask %BH %BL %BP %BPL %BX %EBP %EBX %RBP %RBX %R12 %R13 %R14 %R15 %R12B %R13B %R14B %R15B %R12D %R13D %R14D %R15D %R12W %R13W %R14W %R15W>, %RSP<imp-use>, %RDI<imp-use>, %RSI<imp-use>, %RSP<imp-def>; mem:LD8[FixedStack1]
+<MCInst 460 <MCOperand Reg:44> <MCOperand Imm:1> <MCOperand Reg:0> <MCOperand Imm:24> <MCOperand Reg:0>>IMa
+ShiftMantRight1 ::::8256
+Sub16Bits ::::8384
+normalize ::::8496
+Add16Bits ::::8784
+SetInternalFPFNaN ::::8896
+choose_nan ::::8976
+ShiftMantLeft1 ::::9184
+SetInternalFPFInfinity ::::9312
+error: 32 bit reloc applied to a field with a different size
+error: 32 bit reloc applied to a field with a different size
+error: 32 bit reloc applied to a field with a different size
+error: 32 bit reloc applied to a field with a different size
+error: 32 bit reloc applied to a field with a different size
+error: 32 bit reloc applied to a field with a different size
+error: 32 bit reloc applied to a field with a different size
+7 errors generated.
+make: *** [emfloat.o] Error 1
