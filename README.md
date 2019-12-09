@@ -50,7 +50,7 @@ make && sudo insmod isgx.ko
 /opt/intel/sgxpsw/aesm/aesm_service
 ```
 	
-## D.  Run benchmarks
+## B.  Run benchmarks
 #### 1. Run the basline benchmarks
 ```
 cd /home/root/klotski/ae_programs/native_benchmarks/loader
