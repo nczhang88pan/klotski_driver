@@ -52,16 +52,19 @@ def runDjpeg(randomPageSwap, cacheSize):
         cmd = "./app djpeg " + input_jpegs + " " + output_ppms
     	print("make clean")
     	print(makeDJPEGProgramCMD)
+        if randomPageSwap:
+	   print("the program will swap all mini-pages out after every 0x500 code dereferences.")
         print("exectuing: "+ cmd + ", results are saving to:" + outputFile)
         exec_program(cmd, fp)
 
 def processingJpeg():
-    cacheNumSet = [2,4,8,16,32]
+    #cacheNumSet = [2,4,8,16,32]
+    cacheNumSet = [2]
     print("processingDjpeg")
 
-    randomPageSwap = False 
-    for cacheNum in cacheNumSet:
-        runDjpeg(randomPageSwap, cacheNum)
+    #randomPageSwap = False 
+    #for cacheNum in cacheNumSet:
+    #    runDjpeg(randomPageSwap, cacheNum)
 
     randomPageSwap = True
     for cacheNum in cacheNumSet:

@@ -1672,11 +1672,11 @@ void dereference_ControlFlow_Fallthrough(){
         "movq (%%r15,%%r14,8),%%r14\n"
         "cmp $0,%%r14\n"
         "je entryIsNull_fallthrough\n"
-        #if PAGE_SWAP_RANDOM
-        "incq 0x48(%%r15)\n"   
-        "cmpq $0x500,0x48(%%r15)\n"
-        "je entryIsNull_fallthrough\n"
-        #endif
+       // #if PAGE_SWAP_RANDOM
+       // "incq 0x48(%%r15)\n"   
+       // "cmpq $0x500,0x48(%%r15)\n"
+       // "je entryIsNull_fallthrough\n"
+       // #endif
         "add 0x38(%%r15),%%r14\n"
         "jmp *%%r14\n"
     "entryIsNull_fallthrough:\n"
