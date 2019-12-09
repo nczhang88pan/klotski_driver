@@ -1,4 +1,4 @@
-# I found the docker filesystem may have an effect on the results. So I have to move the program out and use the directory mapping instead. So the document is a little different from the submitted AE pages. Sorry for the inconvenience.
+# I found the docker filesystem may have an effect on the results. So I have to move the program out and use the directory mapping instead. So the instruction is a little different from the submitted AE pages. Sorry for the inconvenience.
 # How to run the benchmarks in Klotksi
 ### A. Setup the enviroment
 #### 1. Install the Intel SGX driver
