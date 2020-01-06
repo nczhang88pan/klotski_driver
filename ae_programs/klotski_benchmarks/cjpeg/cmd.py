@@ -55,6 +55,7 @@ def runCjpeg(randomPageSwap, cacheSize):
 
 def processingJpeg():
     cacheNumSet = [2,4,8,16,32]
+    #cacheNumSet = [2]
     print("processing cjpeg")
 
     randomPageSwap = False 

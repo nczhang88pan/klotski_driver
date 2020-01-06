@@ -61,29 +61,29 @@ The cmd.py script will run the nbench, djpeg and cjpeg automatically and store t
 If you want to test the mbedtls, folow the instructions cout at the end of the logs. Copy the commands and execute them.
 
 #### 2. Run the programs with different vCache size
-##### 2.1. nbench
-```
-cd /home/root/klotski/ae_programs/klotski_benchmarks/nbench/
-./cmd.py
-```
 
-##### 2.2. cjpeg
+##### 2.1. cjpeg
 ```
 cd /home/root/klotski/ae_programs/klotski_benchmarks/cjpeg/
 ./cmd.py
 ```
 
-##### 2.3. djpeg
+##### 2.2. djpeg
 ```
 cd /home/root/klotski/ae_programs/klotski_benchmarks/djpeg/
 ./cmd.py
 ```
 
-##### 2.4. mbedTLS
+##### 2.3. mbedTLS
 MbedTLS can only be tested manually, plz follow the instructions in you terminal.
 ```
 cd /home/root/klotski/ae_programs/klotski_benchmarks/mbedtls/
 ./cmd.py
 ```
 
-The results of the nbench, djpeg and cjpeg would be stored in the `/home/root/klotski/ae_programs/resultDir`
+The results of the djpeg and cjpeg would be stored in the `/home/root/klotski/ae_programs/resultDir`
+
+## Note
+I am sorry again for my bad version control behaviour (bad commit comments and almost 20 branches without merged).
+I don't remember what I have modified. I found crashes that never happened before. However, you can re-run the program after a crash, and can get the full results finally.
+Please check the size of each result files in resultDir, if one does not equal to the others, run it again solely by modifing cmd.py scripts (at the end of it).

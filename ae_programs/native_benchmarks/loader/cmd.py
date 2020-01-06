@@ -4,28 +4,6 @@ import os
 import subprocess
 import sys
 
-def runNbench():
-    #make
-    #1. make clean
-    print("make clean")
-    output = subprocess.check_output("make clean", shell=True)
-    makeNbenchProgramCMD = "make SGX_MODE=HW SGX_DEBUG=1 TARGET=nbench"   
-    outputFile = "../../resultDir/nbench/Result.orginal"
-
-    #2. make
-    print(makeNbenchProgramCMD)
-    output = subprocess.check_output(makeNbenchProgramCMD, shell=True)
-    #3. run program nbench
-    with open(outputFile, "w") as fp:
-        cmd = "./app nbench"
-        print("exectuing: "+ cmd + "; the results are saving to " + outputFile)
-    	output = subprocess.check_output(cmd, shell=True)
-        fp.write(output)
-
-def processingNbench():
-    print("-----processing Nbench: 4-5 mins------")
-    runNbench()
-
 def runDjpeg():
     #make
     #1. make clean
@@ -96,7 +74,6 @@ def processingTLS():
     runTLS()
 
 def main():
-    processingNbench()
     processingJpeg()
     processingTLS()
 

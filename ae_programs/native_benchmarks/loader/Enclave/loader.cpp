@@ -15,11 +15,11 @@ extern char __sgx_code;         /* defined in the linker script */
 
 #ifdef JPEG
 #if JPEG // is djpeg
-char *inputImageFile = "/home/root/klotski/libjpeg/testCase/inputDir/jpg/download";
-char *outputImageFile = "/home/root/klotski/libjpeg/testCase/outputDir/bmp/download";
+char *inputImageFile = "/home/root/klotski/ae_programs/klotski_benchmarks/imgs/inputDir/jpg/download";
+char *outputImageFile = "/home/root/klotski/ae_programs/klotski_benchmarks/imgs/outputDir/bmp/download";
 #else    // is cjpeg
-char *inputImageFile = "/home/root/klotski/libjpeg/testCase/inputDir/ppm/download";
-char *outputImageFile = "/home/root/klotski/libjpeg/testCase/outputDir/jpg/download";
+char *inputImageFile = "/home/root/klotski/ae_programs/klotski_benchmarks/imgs/inputDir/ppm/download";
+char *outputImageFile = "/home/root/klotski/ae_programs/klotski_benchmarks/imgs/outputDir/jpg/download";
 #endif
 #endif
 
