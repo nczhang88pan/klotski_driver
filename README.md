@@ -83,7 +83,14 @@ cd /home/root/klotski/ae_programs/klotski_benchmarks/mbedtls/
 
 The results of the djpeg and cjpeg would be stored in the `/home/root/klotski/ae_programs/resultDir`
 
-## Note
+### Note
 I am sorry again for my bad version control behaviour (bad commit comments and almost 20 branches without merged).
 I don't remember what I have modified. I found crashes that never happened before. However, you can re-run the program after a crash, and can get the full results finally.
-Please check the size of each result files in resultDir, if one does not equal to the others, run it again solely by modifing cmd.py scripts (at the end of it).
+Please check the size of each result files in resultDir, if one does not equal to the others, run it again solely by modifing cmd.py scripts (at the end of it and we have comments there).
+
+## C. analyze results for djpeg and cjpeg:
+Please re-execute the programs until all the restuls (2,4,8,16,32) are collected. Otherwise errors would happen here. 
+```
+python3 ./auto_cal.py
+```
+
