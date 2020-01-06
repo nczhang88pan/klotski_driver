@@ -59,6 +59,8 @@ def runDjpeg(randomPageSwap, cacheSize):
 
 def processingJpeg():
     cacheNumSet = [2,4,8,16,32]
+
+    # if the program crashes, uncomment this and run the scripts again.
     #cacheNumSet = [4]
     print("processingDjpeg")
 
