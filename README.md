@@ -106,4 +106,5 @@ Otherwise errors would happen here.
 ```
 python3 ./auto_cal.py
 ```
+The results of mbedtls are shown in *ab* outputs. Please use the *Time per request*.
 
