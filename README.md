@@ -4,7 +4,9 @@
 #### 1. Install the Intel SGX driver
 ```
 git clone https://github.com/nczhang88pan/klotski_driver.git
-cd ./Klotski_ae
+cd ./klotski_driver
+tar xvf klotski.tar.gz
+cd ./klotski_ae
 ./install_sgx_driver.sh
 ```
 
@@ -13,6 +15,9 @@ or split it into 3 steps.
 Step1: Clone the source code of the Intel SGX driver from the GitHub
 ```
 git clone https://github.com/01org/linux-sgx-driver
+cd ./klotski_driver
+tar xvf klotski.tar.gz
+cd ./klotski_ae
 ```
 We utilized a small trick here to run the original programs in SGX without any modification: force the SGX driver to map the program to the static address determined at the link time. Note that, we don't have to patch this for Klotski programs, but it has no effect.
 
@@ -26,9 +31,9 @@ make && sudo insmod isgx.ko
 ```
 
 #### 2. Create a container
-1. create a container named klotski_ae_evl， replace the {Klotski_ae_dir} with the absolute path of this project.
+1. create a container named klotski_ae_evl， replace the {klotski_driver} with the absolute path of this project.
 	```
-	sudo docker run --rm --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it --privileged -d -v /dev/isgx:/dev/isgx -v {Klotski_ae_dir}:/home/root/klotski/ --ipc=host --name=klotski_ae_evl panzhanghust/klotski_ae
+	sudo docker run --rm --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it --privileged -d -v /dev/isgx:/dev/isgx -v {klotski_driver}/klotski_ae/:/home/root/klotski/ --ipc=host --name=klotski_ae_evl panzhanghust/klotski_ae
 	```
 2. enter the container
 	```
@@ -87,9 +92,17 @@ The results of the djpeg and cjpeg would be stored in the `/home/root/klotski/ae
 I am sorry again for my bad version control behaviour (bad commit comments and almost 20 branches without merged).
 I don't remember what I have modified. I found crashes that never happened before. However, you can re-run the program after a crash, and can get the full results finally.
 Please check the size of each result files in resultDir, if one does not equal to the others, run it again solely by modifing cmd.py scripts (at the end of it and we have comments there).
+You can check their size by:
+```
+cd ae_program/resultDir/cjpeg/
+ls -alh
+cd ae_program/resultDir/djpeg/
+ls -alh
+```
 
 ## C. analyze results for djpeg and cjpeg:
-Please re-execute the programs until all the restuls (2,4,8,16,32) are collected. Otherwise errors would happen here. 
+Please re-execute the programs until all the restuls (2,4,8,16,32) are collected. 
+Otherwise errors would happen here. 
 ```
 python3 ./auto_cal.py
 ```
